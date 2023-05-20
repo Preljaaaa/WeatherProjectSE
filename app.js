@@ -1,10 +1,11 @@
 const express = require('express');
 const axios = require('axios');
+const morgan = require('morgan');
 
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON bodies
+app.use(morgan('dev'));
 app.use(express.json());
 
 // Define API endpoints
@@ -61,7 +62,7 @@ app.get('/weather/history', async (req, res) => {
   }
 });
 
-// Function to fetch current weather data from OpenWeatherMap API
+// Function to fetch current weather
 async function getWeatherData(location) {
   const apiKey = '6853c5df3853d3b4f729a1f69dd97b40';
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
@@ -70,7 +71,7 @@ async function getWeatherData(location) {
   return response.data;
 }
 
-// Function to fetch weather forecast data from OpenWeatherMap API
+// Function to fetch weather forecast
 async function getForecastData(location) {
   const apiKey = '6853c5df3853d3b4f729a1f69dd97b40';
   const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
@@ -79,7 +80,7 @@ async function getForecastData(location) {
   return response.data;
 }
 
-// Function to fetch weather history data from OpenWeatherMap API
+// Function to fetch weather history
 async function getHistoryData(location, startDate, endDate) {
   const apiKey = '6853c5df3853d3b4f729a1f69dd97b40';
   const apiUrl = `https://api.openweathermap.org/data/2.5/history/city?q=${location}&start=${startDate}&end=${endDate}&appid=${apiKey}`;
@@ -88,7 +89,6 @@ async function getHistoryData(location, startDate, endDate) {
   return response.data;
 }
 
-// Start the server
 app.listen(port, () => {
   console.log(`Weather app API is listening at http://localhost:${port}`);
 });
