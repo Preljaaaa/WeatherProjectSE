@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "77fe7c06-2bd0-4e0e-8846-5222ef81c382",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25029811"
+	},
+	"item": [
+		{
+			"name": "current",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/weather/current?location=Sarajevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"weather",
+						"current"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Sarajevo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forecast",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/weather/forecast?location=Sarajevo\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"weather",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Sarajevo\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "history",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/weather/history?location=Sarajevo&start_date=2023-05-01&end_date=2023-05-20\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"weather",
+						"history"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Sarajevo"
+						},
+						{
+							"key": "start_date",
+							"value": "2023-05-01"
+						},
+						{
+							"key": "end_date",
+							"value": "2023-05-20\n"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
